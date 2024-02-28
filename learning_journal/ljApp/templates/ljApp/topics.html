@@ -5,6 +5,7 @@
   <li>
     <a href="{% url 'ljApp:topic' topic.id %}">{{ topic }}</a>
   </li>
+
   {%empty%}
   <li>No topics have been added yet</li>
   {% endfor%}
