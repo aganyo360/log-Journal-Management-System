@@ -30,4 +30,5 @@ def new_topic(req):
             return redirect('ljApp:topics')
     context ={'form':form}
 
-    return render(req, 'ljApp/new_topic.html', context
+    return render(req, 'ljApp/new_topic.html', context)
+
