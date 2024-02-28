@@ -19,11 +19,12 @@ def topic(request, topic_id):
     context = {'topic':topic, 'entries':entries}
     return render(request, 'ljApp/topic.html', context)
 
-def new_topic(req):
-    if req.method !='POST':
+def new_topic(request):
+    if request.method !='POST':
         #no data submitted, create a blank form
         form = TopicForm()
     else:
+        form = TopicForm(data=request.POST)
         #process data  post data submitted
         if form.is_valid():
             #the is_valid option checks whether the form is valid so that it can be submitted to the db
@@ -32,5 +33,5 @@ def new_topic(req):
         #since the form has been processed successfully then redirect to topics section
     context ={'form':form}
 
-    return render(req, 'ljApp/new_topic.html', context)
+    return render(request, 'ljApp/new_topic.html', context)
 

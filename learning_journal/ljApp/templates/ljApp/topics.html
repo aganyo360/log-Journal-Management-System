@@ -1,5 +1,6 @@
 {% extends 'ljApp/base.html'%} {% block content%}
 <h2>Topics</h2>
+
 <ul>
   {% for topic in topics %}
   <li>
@@ -10,4 +11,7 @@
   <li>No topics have been added yet</li>
   {% endfor%}
 </ul>
+<h4>
+  <a href="{% url 'ljApp:new_topic' %}">Add new topic</a>
+</h4>
 {%endblock content%}

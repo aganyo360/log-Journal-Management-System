@@ -1,4 +1,9 @@
 {% extends 'ljApp/base.html' %}
 {% block content%}
-<p>this is just to confrim that everything is working correctly</p>
+<h3>Add a new Topic:</h3>
+<form action="{% url 'ljApp:new_topic'%}" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button name="submit">Add topic</button>
+</form>
 {%endblock content%}
