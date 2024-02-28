@@ -26,8 +26,10 @@ def new_topic(req):
     else:
         #process data  post data submitted
         if form.is_valid():
+            #the is_valid option checks whether the form is valid so that it can be submitted to the db
             form.save()
             return redirect('ljApp:topics')
+        #since the form has been processed successfully then redirect to topics section
     context ={'form':form}
 
     return render(req, 'ljApp/new_topic.html', context)
