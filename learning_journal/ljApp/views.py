@@ -42,8 +42,12 @@ def new_entry(request, topic_id):
         form = EntryForm(data=request.POST)
         if form.is_valid():
             new_entry = form.save(commit=False)
-            
-            return redirect('ljApp:en')
+            new_entry.topic = topic
+            new_entry.save()            
+            return redirect('ljApp:topic', topic_id=topic_id)
+    
+    context ={'topic':topic, 'form':form}
+    return render(request, ljApp/new_entry.html, context)
         
 
 
