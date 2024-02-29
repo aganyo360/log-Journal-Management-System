@@ -2,6 +2,11 @@
 <h4>
     <a href="{% url 'ljApp:new_entry' topic_id %}">{{topic}}</a>
 </h4>
-<h5>Add a new entry</h5>
-
+<h5>Add a new entry :</h5>
+<form action="{% url 'ljApp:new_entry' topic_id%}" method="post">
+    {% csrf_token%}
+    {{form.as_p}}
+    <button name="submit">Add entry</button>
+    
+</form>
 {% endblock content%}
