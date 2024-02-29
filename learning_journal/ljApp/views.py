@@ -47,7 +47,7 @@ def new_entry(request, topic_id):
             return redirect('ljApp:topic', topic_id=topic_id)
     
     context ={'topic':topic, 'form':form}
-    return render(request, ljApp/new_entry.html, context)
+    return render(request, 'ljApp/new_entry.html', context)
         
 
 
