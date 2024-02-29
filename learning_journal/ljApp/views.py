@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import TopicForm
+from .forms import TopicForm, EntryForm
 from . models import Topic
 
 # Create your views here.
