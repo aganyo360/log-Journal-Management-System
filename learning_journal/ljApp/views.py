@@ -34,13 +34,15 @@ def new_topic(request):
     context ={'form':form}
 
     return render(request, 'ljApp/new_topic.html', context)
-def new_entry(request):
+def new_entry(request, topic_id):
+    topic = Topic.objects.get(id=topic_id)
     if request.method !='POST':
         form= EntryForm()        
     else:
         form = EntryForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            new_entry = form.save(commit=False)
+            
             return redirect('ljApp:en')
         
 
