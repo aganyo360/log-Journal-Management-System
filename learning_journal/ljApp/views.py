@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import TopicForm, EntryForm
-from . models import Topic
+from . models import Topic, Entry
 
 # Create your views here.
 def index(request):
@@ -34,4 +34,14 @@ def new_topic(request):
     context ={'form':form}
 
     return render(request, 'ljApp/new_topic.html', context)
+def new_entry(request):
+    if request.method !='POST':
+        form= EntryForm()        
+    else:
+        form = EntryForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('ljApp:en')
+        
+
 
