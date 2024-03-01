@@ -62,6 +62,7 @@ def edit_entry(request, entry_id):
             form.save()
             return redirect('ljApp:topic', topic_id=topic.id)
     
-    return render(request, 'ljApp/edit_entry.html')
-context={'entry':entry}
+    context={'entry':entry, 'topic':topic, 'form':form}
+    return render(request, 'ljApp/edit_entry.html', context)
+    
 
