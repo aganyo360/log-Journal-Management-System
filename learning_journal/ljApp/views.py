@@ -49,5 +49,7 @@ def new_entry(request, topic_id):
     context ={'topic':topic, 'form':form}
     return render(request, 'ljApp/new_entry.html', context)
         
+def edit_entry(req):
+    return render(req, 'ljApp:edit_entry')
 
 
