@@ -58,6 +58,9 @@ def edit_entry(request, entry_id):
         form = EntryForm(instance=entry)
     else:
         form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('ljApp:topic')
     return render(request, 'ljApp/edit_entry.html')
 
 
