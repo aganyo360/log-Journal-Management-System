@@ -54,6 +54,7 @@ def edit_entry(request, entry_id):
     topic = entry.topic
 
     if request.method != 'POST':
+        # INITIAL REQ, PREFILL FORM WITH CURRENT REQ
         
     return render(request, 'ljApp/edit_entry.html')
 
