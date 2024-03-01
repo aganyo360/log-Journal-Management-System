@@ -63,5 +63,5 @@ def edit_entry(request, entry_id):
             return redirect('ljApp:topic', topic_id=topic.id)
     
     return render(request, 'ljApp/edit_entry.html')
-
+context={'entry':entry}
 
