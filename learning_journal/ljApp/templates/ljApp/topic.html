@@ -6,6 +6,9 @@
   <li>
     <p>{{entry.date_added}}</p>
     <p>{{entry.text | linebreaks}}</p>
+    <p>
+      <a href="{% url 'ljApp:edit_entry' entry.id%}"></a>
+    </p>
   </li>
   {%empty%}
   <li>There are not entries for this topic yet</li>
