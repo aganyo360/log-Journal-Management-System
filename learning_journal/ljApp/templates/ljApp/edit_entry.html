@@ -1,6 +1,8 @@
 {% extends 'ljApp/base.html'%}
 {% block content%}
 <h3>
-    <a href="{%url 'ljApp:topic' topic.id%}"></a>
+    <a href="{%url 'ljApp:topic' topic.id%}">{{topic}}</a>
 </h3>
+<h4>Edit entry</h4>
+<form action="{%url 'ljApp:edit_entry%}"></form>
 {% endblock content%}
