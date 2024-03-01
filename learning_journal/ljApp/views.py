@@ -60,7 +60,8 @@ def edit_entry(request, entry_id):
         form = EntryForm(instance=entry, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('ljApp:topic')
+            return redirect('ljApp:topic', topic_id=topic.id)
+    
     return render(request, 'ljApp/edit_entry.html')
 
 
