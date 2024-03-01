@@ -55,7 +55,7 @@ def edit_entry(request, entry_id):
 
     if request.method != 'POST':
         # INITIAL REQ, PREFILL FORM WITH CURRENT REQ
-        form = EntryForm()
+        form = EntryForm(instance=entry)
     return render(request, 'ljApp/edit_entry.html')
 
 
