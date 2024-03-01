@@ -4,5 +4,9 @@
     <a href="{%url 'ljApp:topic' topic.id%}">{{topic}}</a>
 </h3>
 <h4>Edit entry</h4>
-<form action="{%url 'ljApp:edit_entry%}"></form>
+<form action="{%url 'ljApp:edit_entry' entry.id%}">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button name="submit">Save changes</button>
+</form>
 {% endblock content%}
