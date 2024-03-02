@@ -50,6 +50,7 @@ def new_entry(request, topic_id):
     return render(request, 'ljApp/new_entry.html', context)
         
 def edit_entry(request, entry_id):
+    """Edit an exisiting entry"""
     entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
 
